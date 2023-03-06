@@ -49,7 +49,7 @@ const parameterNeighbor = function (data) {
   <article class="country">
     <img class="country__img" src="${data.flags.svg}" />
     <div class="country__data">
-      <h3 class="country__name" id="cName">${data.name}</h3>
+      <h3 class="country__name">${data.name}</h3>
       <h4 class="country__region">${data.region}</h4>
       <p class="country__row"><span>👫</span>${(data.population / 1000000).toFixed(2) + ' millió'
       } people</p>
@@ -92,9 +92,10 @@ let valaszt = orszagNev.value;
     getCountryData(valaszt);
 }
  
-/*
-let szomszedbol = document.querySelector(".neighbors").onclick = function () {
-  let kattintottNev = document.getElementById("cName").innerHTML;
-  console.log(kattintottNev);
-  
-};*/
+
+let szomszedbol = document
+  .querySelector(".neighbors")
+  .addEventListener("click", function () {
+    let kattintottNev = document.querySelector(".country__name").innerHTML;
+    console.log(kattintottNev);
+  });
